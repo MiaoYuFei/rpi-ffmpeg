@@ -1,1 +1,2 @@
 ffmpeg-7.1.2-rpi_28.patch
+0001-configure-unbreak-glslang-build.patch
