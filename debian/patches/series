@@ -1,3 +1,5 @@
 0001-Revert-avcodec-rangecoder-only-perform-renorm-check-.patch
-
 ffmpeg-5.1.7-rpi_27.patch
+0001-configure-fix-compilation-with-glslang-14.patch
+0001-avfilter-vf_libplacebo-remove-deprecated-force_icc_l.patch
+0002-add-missing-formats-in-tests-ref-data.patch
