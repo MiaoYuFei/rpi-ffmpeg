@@ -23994,47 +23994,23 @@
  fate-filter-fsync-up: tests/data/maps/fsync-up
 --- a/tests/ref/fate/imgutils
 +++ b/tests/ref/fate/imgutils
-@@ -235,6 +235,9 @@ nv24            planes: 2, linesizes:  6
- nv42            planes: 2, linesizes:  64 128   0   0, plane_sizes:  3072  6144     0     0, plane_offsets:  3072     0     0, total_size: 9216
- y210be          planes: 1, linesizes: 256   0   0   0, plane_sizes: 12288     0     0     0, plane_offsets:     0     0     0, total_size: 12288
- y210le          planes: 1, linesizes: 256   0   0   0, plane_sizes: 12288     0     0     0, plane_offsets:     0     0     0, total_size: 12288
+@@ -269,6 +269,9 @@ p412be          planes: 2, linesizes: 128 256   0   0, plane_sizes:  6144 12288
+ p412le          planes: 2, linesizes: 128 256   0   0, plane_sizes:  6144 12288     0     0, plane_offsets:  6144     0     0, total_size: 18432
+ gbrap14be       planes: 4, linesizes: 128 128 128 128, plane_sizes:  6144  6144  6144  6144, plane_offsets:  6144  6144  6144, total_size: 24576
+ gbrap14le       planes: 4, linesizes: 128 128 128 128, plane_sizes:  6144  6144  6144  6144, plane_offsets:  6144  6144  6144, total_size: 24576
 +sand128         planes: 2, linesizes:  64  64   0   0, plane_sizes:  3072  1536     0     0, plane_offsets:  3072     0     0, total_size: 4608
 +sand64_10       planes: 2, linesizes: 128 128   0   0, plane_sizes:  6144  3072     0     0, plane_offsets:  6144     0     0, total_size: 9216
 +sand64_16       planes: 2, linesizes: 128 128   0   0, plane_sizes:  6144  3072     0     0, plane_offsets:  6144     0     0, total_size: 9216
- x2rgb10le       planes: 1, linesizes: 256   0   0   0, plane_sizes: 12288     0     0     0, plane_offsets:     0     0     0, total_size: 12288
- x2rgb10be       planes: 1, linesizes: 256   0   0   0, plane_sizes: 12288     0     0     0, plane_offsets:     0     0     0, total_size: 12288
- x2bgr10le       planes: 1, linesizes: 256   0   0   0, plane_sizes: 12288     0     0     0, plane_offsets:     0     0     0, total_size: 12288
-@@ -451,6 +454,9 @@ nv24            total_size:   9216,  bla
- nv42            total_size:   9216,  black_unknown_crc: 0x1c302b58,  black_tv_crc: 0x1c302b58,  black_pc_crc: 0xdf792ea7
- y210be          total_size:  12288,  black_unknown_crc: 0x5483d935,  black_tv_crc: 0x5483d935,  black_pc_crc: 0x06397bf3
- y210le          total_size:  12288,  black_unknown_crc: 0x5d8e1cf6,  black_tv_crc: 0x5d8e1cf6,  black_pc_crc: 0x8fceec45
+ 
+ image_fill_black tests
+ yuv420p         total_size:   4608,  black_unknown_crc: 0xd00f6cc6,  black_tv_crc: 0xd00f6cc6,  black_pc_crc: 0x234969af
+@@ -485,3 +488,6 @@ p412be          total_size:  18432,  black_unknown_crc: 0x26991800,  black_tv_cr
+ p412le          total_size:  18432,  black_unknown_crc: 0x4028ac30,  black_tv_crc: 0x4028ac30,  black_pc_crc: 0xab7c7698
+ gbrap14be       total_size:  24576,  black_unknown_crc: 0x4ec0d987,  black_tv_crc: 0x4ec0d987,  black_pc_crc: 0x4ec0d987
+ gbrap14le       total_size:  24576,  black_unknown_crc: 0x13bde353,  black_tv_crc: 0x13bde353,  black_pc_crc: 0x13bde353
 +sand128         total_size:   4608,  black_unknown_crc: 0xd00f6cc6,  black_tv_crc: 0xd00f6cc6,  black_pc_crc: 0x234969af
 +sand64_10       total_size:   9216,  black_unknown_crc: 0xee47624d,  black_tv_crc: 0xee47624d,  black_pc_crc: 0x7c6afe45
 +sand64_16       total_size:   9216,  black_unknown_crc: 0xfff85b60,  black_tv_crc: 0xfff85b60,  black_pc_crc: 0xc03cff93
- x2rgb10le       total_size:  12288,  black_unknown_crc: 0x00000000,  black_tv_crc: 0x00000000,  black_pc_crc: 0x00000000
- x2rgb10be       total_size:  12288,  black_unknown_crc: 0x00000000,  black_tv_crc: 0x00000000,  black_pc_crc: 0x00000000
- x2bgr10le       total_size:  12288,  black_unknown_crc: 0x00000000,  black_tv_crc: 0x00000000,  black_pc_crc: 0x00000000
---- a/tests/ref/fate/source
-+++ b/tests/ref/fate/source
-@@ -1,5 +1,8 @@
- Files without standard license headers:
- libavcodec/file_open.c
-+libavcodec/hevc-ctrls-v1.h
-+libavcodec/hevc-ctrls-v2.h
-+libavcodec/hevc-ctrls-v3.h
- libavcodec/interplayacm.c
- libavcodec/log2_tab.c
- libavcodec/reverse.c
-@@ -26,6 +29,9 @@ compat/float/float.h
- compat/float/limits.h
- compat/stdbit/stdbit.h
- libavcodec/bitstream_template.h
-+libavcodec/hevc-ctrls-v1.h
-+libavcodec/hevc-ctrls-v2.h
-+libavcodec/hevc-ctrls-v3.h
- tools/decode_simple.h
- Use of av_clip() where av_clip_uintp2() could be used:
- Use of av_clip() where av_clip_intp2() could be used:
 --- a/tests/ref/fate/sws-pixdesc-query
 +++ b/tests/ref/fate/sws-pixdesc-query
 @@ -23,6 +23,7 @@ is16BPS:

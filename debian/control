@@ -1,7 +1,8 @@
 Source: ffmpeg
 Section: video
 Priority: optional
-Maintainer: Serge Schneider <serge@raspberrypi.com>
+Maintainer: Yufei Miao <miao1381106@gmail.com>
+XSBC-Original-Maintainer: Serge Schneider <serge@raspberrypi.com>
 Rules-Requires-Root: no
 Homepage: https://ffmpeg.org/
 Standards-Version: 4.7.2
